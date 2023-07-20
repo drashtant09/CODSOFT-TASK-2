@@ -20,19 +20,123 @@ body {
 
 .navbar{
     display: flex;
-    align-items: center;
     justify-content: right;
-    flex-wrap: wrap;    
+    align-items: center;
+    position: sticky;
+    top: 0;
 }
-
-.navbar ul li{
-    display: inline-block;
+.navbar ul{
+    display: flex;
     list-style: none;
-    margin: 10px 20px;
+    margin: 20px 0px;
+}
+.navbar ul li{
+    font-family: century;
+    font-size: 1.rem;
+    font-weight: bold;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 8px 25px;
+    transition: all .5s ease;
+}
+.navbar ul li a:hover{
+    background-color: rgb(68, 210, 227);
+    color: black;
+    box-shadow: 0 0 10px rgb(68, 210, 227);
+}
+.header-text{
+    margin: 15%;
+    font-size: 25px;
+}
+.header-text h1{
+    font-size: 50px;
+    margin-top: 20px;
+}
+.header-text h1 span{
+    color: #e36d29;
+}
+.btn{
+    padding: 10px 35px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    outline: none;
+    transition: .6s ease;
+    margin-top: 20px;
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 5rem white, 0 0 1rem white, 0 0 1.5rem white;
+    font-weight: bold;
 }
 
-.navbar ul li a{
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
+#about{
+    padding: 60px 0;
+    color: #ababab;
 }
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-left: 80px;
+}
+
+.about-col-1{
+    flex-basis: 35%;
+}
+
+.about-col-1 img{
+    width: 95%;
+    border-radius: 15px;
+}
+.about-col-2{
+    flex-basis: 60%;
+}
+
+.sub-title{
+    font-size: 50px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #cec325;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after{
+    width: 50%;
+}
+
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+
+.tab-contents ul li span{
+    color: aqua;
+    font-size: 14px;
+}
+  
