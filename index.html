@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/fbf5520371.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="header">
@@ -38,35 +39,76 @@
                     <p>Hi! My name is Drashtant Gangwar. I am a Frontend developer and currently I am pursuing my B.tech from Ajay Kumar Garg Engineering College, Ghaziabad in Electronics and Communication.Throughout my academic journey, I've embraced every opportunity to expand my knowledge and skills.Beyond the classroom, I've actively engaged in various extracurricular activities.I believe in continuous learning and staying at the forefront of the latest trends.
                     </p>
                     <div class="tab-titles">
-                        <p class="tab-links active-link">Skills</p>
-                        <p class="tab-links">Education</p>
-                        <p class="tab-links">Hobbies</p>
+                        <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('Education')">Education</p>
+                        <p class="tab-links" onclick="opentab('Hobbies')">Hobbies</p>
                     </div>
-                </div>
-                <div class="tab-contents">
-                   <ul>
-                       <li><span>Languages</span><br>C++, CSS, HTML, Javascripts</li>
-                       <li><span>Frameworks</span><br>ReactJS, Bootstrap, JWT, Material UI</li>
-                       <li><span>Softwares</span><br>VS Code, Github, Netlify</li>
-                   </ul>
-                     <div class="tab-contents">
+                    <div class="tab-contents active-tab" id="Skills">
                         <ul>
-                            <li><span>2020 - Current</span><br>Pursuing B.tech from AKGEC</li>
+                            <li><span>Languages</span><br>C++, CSS, HTML, Javascript</li>
+                            <li><span>Frameworks</span><br>ReactJS, Bootstrap, JWT, Material UI</li>
+                            <li><span>Softwares</span><br>VS Code, Github, Netlify</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Education">
+                        <ul>
+                            <li><span>2021 - Current</span><br>Pursuing B.tech from AKGEC</li>
                             <li><span>2017</span><br>10th</li>
                             <li><span>2019</span><br>12th</li>
                         </ul>
-                     </div>
-                     <div class="tab-contents">
+                    </div>
+                    <div class="tab-contents" id="Hobbies">
                         <ul>
                             <li><br>Sports</li>
-                            <li><br>Outdoors</li>
+                            <li><br>Outdoor Activities</li>
                             <li><br>Languages</li>
                         </ul>
-                         </div>
-                     </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div id="Services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="Services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit perferendis optio natus expedita accusamus animi commodi eum voluptatem dolor quam sed asperiores, officiis vero sapiente minus perspiciatis illo molestias fuga nobis sint odit adipisci inventore.</p>
+                    <a href="">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-crop-simple"></i>
+                    <h2>UI/UX</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit perferendis optio natus expedita accusamus animi commodi eum voluptatem dolor quam sed asperiores, officiis vero sapiente minus perspiciatis illo molestias fuga nobis sint odit adipisci inventore.</p>
+                    <a href="">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2>App Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit perferendis optio natus expedita accusamus animi commodi eum voluptatem dolor quam sed asperiores, officiis vero sapiente minus perspiciatis illo molestias fuga nobis sint odit adipisci inventore.</p>
+                    <a href="">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+           for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+           } 
+           for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+           }
+           event.currentTarget.classList.add("active-link");
+           document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    
 </body>
 </html>
