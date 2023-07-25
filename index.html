@@ -105,7 +105,7 @@
                     <h3>Music Player</h3>
                     <p>This is the music player with the interactive UI for the easy access for user.
                     This application can be used to play mp3 songs.</p>
-                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <a href="https://drashtant09.github.io/music-player/"><i class="fa-solid fa-up-right-from-square"></i></a>
                 </div>
                 </div>
                 <div class="Projects">
@@ -113,7 +113,7 @@
                     <div class="layer">
                         <h3>Form Validation</h3>
                         <p>Form validation is useful when you need a user to input information that is expected to meet certain requirements.</p>
-                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                        <a href="https://drashtant09.github.io/Validation-Form/"><i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
             </div>
             <div class="Projects">
@@ -121,7 +121,7 @@
                 <div class="layer">
                     <h3>Weatherapp</h3>
                     <p>It's simply a view of the temperature range, and when observing today's temperature, where the current temperature fits in the range.</p>
-                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <a href="https://jade-maamoul-9348c9.netlify.app/"><i class="fa-solid fa-up-right-from-square"></i></a>
                 </div>
         </div>
      </div>
@@ -145,12 +145,15 @@
                     <a href="images/Resume.pdf" download class="btn1 btn3">Download CV</a>
                 </div>
                 <div class="Contact-right">
-                    <form>
+                    <form name="submit-to-google-sheet">
                         <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <textarea type="text" name="Name" placeholder="Your Message"></textarea>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                         <button type="submit" class="btn bt3">Submit</button>
                     </form>
+                    
+                    <span id="msg"></span>
+
                 </div>
             </div>
         </div>
@@ -174,5 +177,25 @@
         }
     </script>
     
+    
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzDe8P_4hyQZtXk5foYKsnCBthMH-50pZum09qayoSytbtNYCAjjtsyEZWb3cfjgj41/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },2000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
 </body>
 </html>
